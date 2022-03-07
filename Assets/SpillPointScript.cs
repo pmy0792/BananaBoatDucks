@@ -14,20 +14,25 @@ public class SpillPointScript : MonoBehaviour
 
     public Animator animator;
     public SpriteRenderer rend;
+    public Sprite repairedImage;
+    public SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
-        SpillPointImage=gameObject.GetComponent<SpriteRenderer>().sprite;
-        //animator=GetComponent<Animator>();
+        spriteRenderer=gameObject.GetComponent<SpriteRenderer>();
+        animator=GetComponent<Animator>();
         //rend=GetComponent<SpriteRenderer>();
 
     }
-
+    void ChangeSprite(){
+        spriteRenderer.sprite=repairedImage;
+    }
     // Update is called once per frame
     void Update()
     {
         if (SplitSlider.value==10 && repaired==false) { // split point repair completed
-            this.gameObject.GetComponent<SpriteRenderer>().sprite=Resources.Load<Sprite>("repaired_5");
+            //this.gameObject.GetComponent<SpriteRenderer>().sprite=Resources.Load<Sprite>("Square");
+            ChangeSprite();
             SplitSlider.gameObject.SetActive(false);
             ScoreScript.score+=ScoreUp;
             SplitSlider.value=0;
@@ -49,7 +54,8 @@ public class SpillPointScript : MonoBehaviour
             SplitSlider.value += Time.deltaTime * speed;
 
             //animation trigger
-            
+           animator.SetBool("repaired",true);
+            Debug.Log("Repaired!");
         }
     }
     private void OnTriggerExit2D(Collider2D other) {

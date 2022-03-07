@@ -21,7 +21,6 @@ public class RightCollider : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.tag=="Player"){
             if (!mutated){
-                Debug.Log("mutated!");
                 transform.parent.GetComponent<Animator>().SetTrigger("mutate");
                 mutated=true;
             }
@@ -38,7 +37,6 @@ public class RightCollider : MonoBehaviour
         }
         if (movingRight){
             if (other.tag=="Wall"){
-                Debug.Log("**");
                 transform.parent.GetComponent<Transform>().eulerAngles=new Vector3(0,180,0);
                 
                 movingRight=false;

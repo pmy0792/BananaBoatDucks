@@ -484,10 +484,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 40
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -826,7 +826,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463199458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.86, y: 3.761, z: 0}
+  m_LocalPosition: {x: -7.5, y: -3.92, z: 0}
   m_LocalScale: {x: 0.85586196, y: 0.8633797, z: 0.81095743}
   m_Children:
   - {fileID: 1274971450}
@@ -4310,6 +4310,8 @@ MonoBehaviour:
   ScoreUp: 30
   animator: {fileID: 0}
   rend: {fileID: 0}
+  repairedImage: {fileID: 4474320507876955779, guid: ee4c673e364b1b34488e85f2f2560b24, type: 3}
+  spriteRenderer: {fileID: 0}
 --- !u!61 &1980194526
 BoxCollider2D:
   m_ObjectHideFlags: 0

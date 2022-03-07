@@ -87,13 +87,13 @@ public class CharacterMove : MonoBehaviour
     
     private void OnTriggerStay2D(Collider2D other) {
         if (other.CompareTag("Ladder")){
-             if (Input.GetKey(KeyCode.UpArrow)){
+             if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow)){
                 animator.SetTrigger("doClimbing");
                 animator.SetBool("isClimbing",true);}
         }
 
         if (other.CompareTag("Spill")){
-            if (Input.GetKey(KeyCode.RightArrow)){
+            if (Input.GetKey(KeyCode.LeftArrow)){
                 animator.SetBool("hammering",true);
                 repairing=true;
             }
